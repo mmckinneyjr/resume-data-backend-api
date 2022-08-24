@@ -2,7 +2,7 @@
 GET http://localhost:3000/skills.json
 
 ##### Select One
-GET http://localhost:3000/skills/4.json
+GET http://localhost:3000/skills/2.json
 
 ##### Create
 POST http://localhost:3000/skills.json
@@ -23,4 +23,4 @@ Content-Type: application/json
 }
 
 ##### Delete
-DELETE http://localhost:3000/skills/2.json
+DELETE http://localhost:3000/skills/3.json

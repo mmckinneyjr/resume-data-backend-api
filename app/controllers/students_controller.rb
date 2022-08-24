@@ -53,7 +53,7 @@ class StudentsController < ApplicationController
 	def destroy
 		student = Student.find_by(id: params["id"])
 		student.destroy
-		render json: { message: "Student destroyed successfully" }, status: :destroyed
+		render json: { message: "Student destroyed successfully" }
 	end
 
 end

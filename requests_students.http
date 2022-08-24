@@ -23,4 +23,6 @@ Content-Type: application/json
 	"website_url": "http://www.example.com/"
 }
 
-### Students 
+### Students Destroy
+DELETE http://localhost:3000/students/1
+Content-Type: application/json
