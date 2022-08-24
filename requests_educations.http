@@ -1,0 +1,29 @@
+### Educations Index
+GET http://localhost:3000/educations 
+
+### Educations Show
+GET http://localhost:3000/educations/1
+
+### Educations Create
+POST http://localhost:3000/educations
+  Content-Type: application/json
+
+{
+  "start_date": "01/01/2023",
+  "end_date": "01/01/2027",
+  "degree": "Bachelor of Test",
+  "university_name": "Test University",
+  "details": "Test details long format",
+}
+
+### Educations Update
+PATH http://localhost:3000/educations/4.json
+Content-Type: application/json
+
+{
+  "degree": "Bachelor of Update Test",
+  "university_name": "Update Test University",
+}
+
+### Destroy Educations
+DELETE http://localhost:3000/educations/4.json
