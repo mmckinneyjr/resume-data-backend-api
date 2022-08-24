@@ -25,3 +25,13 @@ Student.create(first_name: "wade", last_name: "wilson", email: "deadpool@example
 Student.create(first_name: "Jonathan", last_name: "Osterman", email: "drmanhattan@example.com", phone_number: "555-555-2332", short_bio: "Dr Manhattan is a doctor", linkedin_url: "linkedin.com", twitter_handle: "drmanhattan", website_url: "", resume_url: "", github_url: "github.com", photo: "https://www.refinery29.com/images/8597116.jpg", password: "password", password_confirmation: "password")
 
 Student.create(first_name: "Ororo", last_name: "Munroe", email: "storm@example.com", phone_number: "555-555-2322", short_bio: "She has super powers like a storm", linkedin_url: "linkedin.com", twitter_handle: "storm", website_url: "", resume_url: "", github_url: "github.com", photo: "https://i.pinimg.com/originals/95/a1/b5/95a1b5ada240adcb7f70361db5e06026.jpg", password: "password", password_confirmation: "password")
+
+Experience.create(student_id: 1, start_date: "01/01/2023", end_date: "01/01/2027", job_title: "Superhero", company_name: "Justice League", details: "Change clothes in phone booth and avoid kryptonite")
+
+Experience.create(student_id: 2, start_date: "01/01/2024", end_date: "01/01/2028", job_title: "Superhero", company_name: "Justice League", details: "Have a lot of money and find a sidekick and fight crime")
+
+Experience.create(student_id: 3, start_date: "01/01/2025", end_date: "01/01/2029", job_title: "Superhero", company_name: "Marvel", details: "Get disfigured and fight crime")
+
+Experience.create(student_id: 4, start_date: "01/01/2026", end_date: "01/01/2030", job_title: "Superhero", company_name: "Watchmen", details: "Become the most powerful character in the universe")
+
+Experience.create(student_id: 5, start_date: "01/01/2027", end_date: "01/01/2031", job_title: "Superhero", company_name: "X-Men", details: "Watch out for weather and fight crime")
