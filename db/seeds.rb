@@ -1,9 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+Skill.create(student_id: 1, skill: "walking")
+Skill.create(student_id: 1, skill: "talking")
+Skill.create(student_id: 2, skill: "ruby")
+Skill.create(student_id: 2, skill: "sky diving")
+Skill.create(student_id: 2, skill: "programming")
 
-## test push
+Capstone.create(student_id: 1, name: "Some Capstone", description: "This is a description for some capstone", url: "www.google.com", screenshot: "")
+Capstone.create(student_id: 2, name: "Resume App", description: "A resume app we are all creating together for this coding bootcamp", url: "www.google.com", screenshot: "")
+Capstone.create(student_id: 3, name: "Guardian Space Force App", description: "This people are the guardians of the galaxy", url: "www.google.com", screenshot: "")
+Capstone.create(student_id: 4, name: "Look over there", description: "Hey you, look over there. No over there!", url: "www.google.com", screenshot: "")
+Capstone.create(student_id: 5, name: "Computer hacking", description: "Kids, dont hack computers, its bad", url: "www.google.com", screenshot: "")
