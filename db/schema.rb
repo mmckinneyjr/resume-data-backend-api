@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2022_08_24_164941) do
-=======
-ActiveRecord::Schema[7.0].define(version: 2022_08_24_165301) do
->>>>>>> e0a95c9911abcc1ac82d9060a5867d53b17468e8
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_192536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,13 +36,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_165301) do
 
   create_table "experiences", force: :cascade do |t|
     t.integer "student_id"
-    t.string "start_date"
-    t.string "end_date"
     t.string "job_title"
     t.string "company_name"
-    t.string "details"
+    t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
   end
 
   create_table "skills", force: :cascade do |t|
