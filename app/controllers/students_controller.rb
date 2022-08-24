@@ -47,7 +47,11 @@ class StudentsController < ApplicationController
 		student.resume_url = params["resume_url"] || student.resume_url
 		student.github_url = params["github_url"] || student.github_url
 		student.photo = params["photo"] || student.photo
-		render json: student.as_json
+		if student.save
+			render json: student.as_json
+		else
+			render json: { errors: student.errors.full_messages }, status: :bad_request
+		end
 	end
 
 	def destroy

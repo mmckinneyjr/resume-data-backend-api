@@ -2,7 +2,7 @@
 GET http://localhost:3000/students
 
 ### Students Show
-GET http://localhost:3000/students/1
+GET http://localhost:3000/students/10
 
 ### Student Create
 POST http://localhost:3000/students
