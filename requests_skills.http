@@ -1,0 +1,26 @@
+##### Select All
+GET http://localhost:3000/skills.json
+
+##### Select One
+GET http://localhost:3000/skills/4.json
+
+##### Create
+POST http://localhost:3000/skills.json
+Content-Type: application/json
+
+{
+  "student_id": "student",
+  "skill": "Some new skill"
+}
+
+##### Update
+PATCH http://localhost:3000/skills/2.json
+Content-Type: application/json
+
+{
+  "student_id": "student",
+  "skill": "Another new skill"
+}
+
+##### Delete
+DELETE http://localhost:3000/skills/2.json

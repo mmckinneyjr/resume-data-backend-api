@@ -1,0 +1,33 @@
+##### Select All
+GET http://localhost:3000/capstones.json
+
+##### Select One
+GET http://localhost:3000/capstones/4.json
+
+##### Create
+POST http://localhost:3000/capstones.json
+Content-Type: application/json
+
+{
+  "student_id": "student",
+  "name": "Some named capstone",
+  "description": "This some descirption about some named capstone",
+  "url": "www.google.com",
+  "screenshot": ""
+
+}
+
+##### Update
+PATCH http://localhost:3000/capstones/2.json
+Content-Type: application/json
+
+{
+  "student_id": "student",
+  "name": "Star wars",
+  "description": "In a galaxy far far away",
+  "url": "www.starwars.com",
+  "screenshot": ""
+}
+
+##### Delete
+DELETE http://localhost:3000/capstones/2.json
