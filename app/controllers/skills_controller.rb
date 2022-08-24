@@ -11,11 +11,11 @@ class SkillsController < ApplicationController
 
   def create
     skill = Skill.new(
-      name: params[:name],
-      email: params[:email],
+      student_id: params[:student_id],
+      skill: params[:skill],
     )
     if skill.save
-      render json: { message: "#{params[:name]}'s account successfully created" }, status: :created
+      render json: { message: "Skill successfully created" }, status: :created
     else
       render json: { errors: skill.errors.full_messages }, status: :bad_request
     end
@@ -23,7 +23,8 @@ class SkillsController < ApplicationController
 
   def update
     skill = Skill.find_by(id: params["id"])
-    skill.name = params["name"] || skill.name
+    skill.student_id = params["student_id"] || skill.student_id
+    skill.skill = params["skill"] || skill.skill
 
     if skill.save
       render json: skill.as_json
