@@ -1,0 +1,14 @@
+### Students Index
+GET http://localhost:3000/students
+
+### Student Create
+POST http://localhost:3000/students
+Content-Type: application/json
+
+{
+	"first_name": "Test",
+	"email": "email@example.com",
+	"password": "password",
+	"password_confirmation": "password"
+}
+
