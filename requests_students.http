@@ -1,6 +1,9 @@
 ### Students Index
 GET http://localhost:3000/students
 
+### Students Show
+GET http://localhost:3000/students/1
+
 ### Student Create
 POST http://localhost:3000/students
 Content-Type: application/json
@@ -12,3 +15,12 @@ Content-Type: application/json
 	"password_confirmation": "password"
 }
 
+### Students Update
+PATCH http://localhost:3000/students/1
+Content-Type: application/json
+
+{
+	"website_url": "http://www.example.com/"
+}
+
+### Students 
