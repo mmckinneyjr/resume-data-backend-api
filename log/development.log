@@ -1,0 +1,204 @@
+Started POST "/students" for 127.0.0.1 at 2022-08-24 13:56:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"first_name"=>"Test", "email"=>"email@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "student"=>{"first_name"=>"Test", "email"=>"email@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mStudent Create (9.7ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "website_url", "resume_url", "github_url", "photo", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["first_name", "Test"], ["last_name", nil], ["email", "email@example.com"], ["phone_number", nil], ["short_bio", nil], ["linkedin_url", nil], ["twitter_handle", nil], ["website_url", nil], ["resume_url", nil], ["github_url", nil], ["photo", nil], ["created_at", "2022-08-24 17:56:55.945558"], ["updated_at", "2022-08-24 17:56:55.945558"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+Completed 201 Created in 304ms (Views: 0.2ms | ActiveRecord: 27.5ms | Allocations: 12939)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2022-08-24 13:56:58 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"1", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (7.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 7.8ms | Allocations: 1929)
+
+
+Started DELETE "/students/1" for 127.0.0.1 at 2022-08-24 13:57:59 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"1", "student"=>{}}
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+  [1m[36mStudent Destroy (3.0ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 8.1ms | Allocations: 2247)
+
+
+  
+ArgumentError (Unrecognized status code :destroyed):
+  
+app/controllers/students_controller.rb:56:in `destroy'
+Started DELETE "/students/1" for 127.0.0.1 at 2022-08-24 13:58:25 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"1", "student"=>{}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `destroy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 9.4ms | Allocations: 2377)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass
+
+		student.destroy
+		       ^^^^^^^^):
+  
+app/controllers/students_controller.rb:55:in `destroy'
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT "students".* FROM "students" ORDER BY "students"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/students" for 127.0.0.1 at 2022-08-24 13:58:55 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (7.6ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:5:in `index'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 7.6ms | Allocations: 822)
+
+
+Started GET "/students" for 127.0.0.1 at 2022-08-24 13:58:55 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (1.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:5:in `index'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.2ms | Allocations: 603)
+
+
+Started POST "/students" for 127.0.0.1 at 2022-08-24 13:58:59 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"first_name"=>"Test", "email"=>"email@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "student"=>{"first_name"=>"Test", "email"=>"email@example.com"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mStudent Create (8.1ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "website_url", "resume_url", "github_url", "photo", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["first_name", "Test"], ["last_name", nil], ["email", "email@example.com"], ["phone_number", nil], ["short_bio", nil], ["linkedin_url", nil], ["twitter_handle", nil], ["website_url", nil], ["resume_url", nil], ["github_url", nil], ["photo", nil], ["created_at", "2022-08-24 17:58:59.559804"], ["updated_at", "2022-08-24 17:58:59.559804"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+Completed 201 Created in 372ms (Views: 0.1ms | ActiveRecord: 50.0ms | Allocations: 5225)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2022-08-24 13:59:01 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"1", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 1727)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass
+
+		student.first_name = params["first_name"] || student.first_name
+		                                                    ^^^^^^^^^^^):
+  
+app/controllers/students_controller.rb:39:in `update'
+Started PATCH "/students/1" for 127.0.0.1 at 2022-08-24 14:01:59 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"1", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (1.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.9ms | Allocations: 1683)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass
+
+		student.first_name = params["first_name"] || student.first_name
+		                                                    ^^^^^^^^^^^):
+  
+app/controllers/students_controller.rb:39:in `update'
+Started PATCH "/students/1" for 127.0.0.1 at 2022-08-24 14:01:59 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"1", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (14.7ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 14.7ms | Allocations: 1683)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass
+
+		student.first_name = params["first_name"] || student.first_name
+		                                                    ^^^^^^^^^^^):
+  
+app/controllers/students_controller.rb:39:in `update'
+Started POST "/students" for 127.0.0.1 at 2022-08-24 14:02:09 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"first_name"=>"Test", "email"=>"email@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "student"=>{"first_name"=>"Test", "email"=>"email@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mStudent Create (0.7ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "website_url", "resume_url", "github_url", "photo", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["first_name", "Test"], ["last_name", nil], ["email", "email@example.com"], ["phone_number", nil], ["short_bio", nil], ["linkedin_url", nil], ["twitter_handle", nil], ["website_url", nil], ["resume_url", nil], ["github_url", nil], ["photo", nil], ["created_at", "2022-08-24 18:02:10.060348"], ["updated_at", "2022-08-24 18:02:10.060348"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+Completed 201 Created in 305ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 2108)
+
+
+Started GET "/students" for 127.0.0.1 at 2022-08-24 14:02:12 -0400
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  ↳ app/controllers/students_controller.rb:5:in `index'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 984)
+
+
+Started POST "/students" for 127.0.0.1 at 2022-08-24 14:02:19 -0400
+Processing by StudentsController#create as HTML
+  Parameters: {"first_name"=>"Test", "email"=>"email@example.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "student"=>{"first_name"=>"Test", "email"=>"email@example.com"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mStudent Create (0.5ms)[0m  [1m[32mINSERT INTO "students" ("first_name", "last_name", "email", "phone_number", "short_bio", "linkedin_url", "twitter_handle", "website_url", "resume_url", "github_url", "photo", "created_at", "updated_at", "password_digest") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) RETURNING "id"[0m  [["first_name", "Test"], ["last_name", nil], ["email", "email@example.com"], ["phone_number", nil], ["short_bio", nil], ["linkedin_url", nil], ["twitter_handle", nil], ["website_url", nil], ["resume_url", nil], ["github_url", nil], ["photo", nil], ["created_at", "2022-08-24 18:02:19.389078"], ["updated_at", "2022-08-24 18:02:19.389078"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/students_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:30:in `create'
+Completed 201 Created in 302ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 2115)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2022-08-24 14:02:20 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"1", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.3ms | Allocations: 1681)
+
+
+  
+NoMethodError (undefined method `first_name' for nil:NilClass
+
+		student.first_name = params["first_name"] || student.first_name
+		                                                    ^^^^^^^^^^^):
+  
+app/controllers/students_controller.rb:39:in `update'
+Started PATCH "/students/2" for 127.0.0.1 at 2022-08-24 14:02:27 -0400
+Processing by StudentsController#update as HTML
+  Parameters: {"website_url"=>"http://www.example.com/", "id"=>"2", "student"=>{"website_url"=>"http://www.example.com/"}}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:38:in `update'
+Completed 200 OK in 16ms (Views: 4.5ms | ActiveRecord: 0.9ms | Allocations: 817)
+
+
+Started DELETE "/students/2" for 127.0.0.1 at 2022-08-24 14:02:34 -0400
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"2", "student"=>{}}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/students_controller.rb:54:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+  [1m[36mStudent Destroy (0.8ms)[0m  [1m[31mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/students_controller.rb:55:in `destroy'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 2079)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (6.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (47.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "resume_data_backend_api_development"[0m
+  [1m[35m (24.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "resume_data_backend_api_test"[0m
+  [1m[35m (149.6ms)[0m  [1m[35mCREATE DATABASE "resume_data_backend_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE DATABASE "resume_data_backend_api_test" ENCODING = 'unicode'[0m
