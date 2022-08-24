@@ -37,13 +37,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_164941) do
 
   create_table "experiences", force: :cascade do |t|
     t.integer "student_id"
-    t.string "start_date"
-    t.string "end_date"
     t.string "job_title"
     t.string "company_name"
-    t.string "details"
+    t.text "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "start_date"
+    t.date "end_date"
   end
 
   create_table "skills", force: :cascade do |t|
