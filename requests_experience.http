@@ -1,0 +1,26 @@
+### Experiences index
+GET http://localhost:3000/experiences
+
+### Experiences create
+POST http://localhost:3000/experiences
+
+{
+  "start_date": "Test start_date",
+  "end_date": "Test end_date",
+  "job_title": "Test job_title",
+  "comapany_name": "Test comapany_name",
+  "details": "Test details"
+}
+
+### Experiences show
+GET http://localhost:3000/experiences/1
+
+### Experiences update
+PATCH http://localhost:3000/experiences/1
+
+{
+  "job_title": "Test job_title2"
+}
+
+### Experiences destroy
+DELETE http://localhost:3000/experiences/2
