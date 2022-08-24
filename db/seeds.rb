@@ -9,3 +9,9 @@ Capstone.create(student_id: 2, name: "Resume App", description: "A resume app we
 Capstone.create(student_id: 3, name: "Guardian Space Force App", description: "This people are the guardians of the galaxy", url: "www.google.com", screenshot: "")
 Capstone.create(student_id: 4, name: "Look over there", description: "Hey you, look over there. No over there!", url: "www.google.com", screenshot: "")
 Capstone.create(student_id: 5, name: "Computer hacking", description: "Kids, dont hack computers, its bad", url: "www.google.com", screenshot: "")
+
+Education.create(student_id: 1, start_date: "01/01/2023", end_date: "01/01/2027", degree: "Bachelor of Arts", university_name: "Actualize University", details: "learned to learn to code")
+Education.create(student_id: 2, start_date: "01/01/2024", end_date: "01/01/2028", degree: "Bachelor of Science", university_name: "CodeAbode University", details: "learned to break code")
+Education.create(student_id: 3, start_date: "01/01/2025", end_date: "01/01/2029", degree: "Bachelor of Birds", university_name: "BirdCo University", details: "never panicked")
+Education.create(student_id: 4, start_date: "01/01/2026", end_date: "01/01/2030", degree: "Bachelor of Oops", university_name: "Uh Oh University", details: "made oopsies")
+Education.create(student_id: 5, start_date: "01/01/2027", end_date: "01/01/2031", degree: "Bachelor of Magic", university_name: "Hogwarts University", details: "code is magic")
