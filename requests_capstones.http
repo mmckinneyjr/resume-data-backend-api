@@ -9,7 +9,7 @@ POST http://localhost:3000/capstones.json
 Content-Type: application/json
 
 {
-  "student_id": "student",
+  "student_id": "1",
   "name": "Some named capstone",
   "description": "This some descirption about some named capstone",
   "url": "www.google.com",
@@ -22,7 +22,7 @@ PATCH http://localhost:3000/capstones/2.json
 Content-Type: application/json
 
 {
-  "student_id": "student",
+  "student_id": "4",
   "name": "Star wars",
   "description": "In a galaxy far far away",
   "url": "www.starwars.com",
@@ -30,4 +30,4 @@ Content-Type: application/json
 }
 
 ##### Delete
-DELETE http://localhost:3000/capstones/2.json
+DELETE http://localhost:3000/capstones/3.json
