@@ -1,8 +1,8 @@
 ### Students Index
-GET http://localhost:3000/students
+GET http://localhost:3000/students.json
 
 ### Students Show
-GET http://localhost:3000/students/1
+GET http://localhost:3000/students/1.json
 
 ### Student Create
 POST http://localhost:3000/students
