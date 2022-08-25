@@ -1,18 +1,17 @@
 class StudentsController < ApplicationController
+  def index
+    @students = Student.all
+    render :index
+  end
 
-	def index
-		students = Student.all
-		render json: students.as_json
-	end
+  def show
+    @student_id = params["id"]
+    @student = Student.find_by(id: @student_id)
+    render :show
+  end
 
-	def show
-		student_id = params["id"]
-		student = Student.find_by(id: student_id)
-		render json: student.as_json
-	end
-	
-	def create
-		student = Student.new(
+  def create
+    student = Student.new(
       first_name: params["first_name"],
       last_name: params["last_name"],
       email: params["email"],
@@ -25,15 +24,16 @@ class StudentsController < ApplicationController
       github_url: params["github_url"],
       photo: params["photo"],
       password: params["password"],
-      password_confirmation: params["password_confirmation"]
+      password_confirmation: params["password_confirmation"],
     )
-		if student.save
-			render json: { message: "Student created successfully" }, status: :created
-		else
-			render json: { errors: student.errors.full_messages }, status: :bad_request
-		end
-	end
+    if student.save
+      render json: { message: "Student created successfully" }, status: :created
+    else
+      render json: { errors: student.errors.full_messages }, status: :bad_request
+    end
+  end
 
+<<<<<<< HEAD
 	def update
 		student = Student.find_by(id: params["id"])
 		student.first_name = params["first_name"] || student.first_name
@@ -54,10 +54,9 @@ class StudentsController < ApplicationController
 		end
 	end
 
-	def destroy
-		student = Student.find_by(id: params["id"])
-		student.destroy
-		render json: { message: "Student destroyed successfully" }
-	end
-
+  def destroy
+    student = Student.find_by(id: params["id"])
+    student.destroy
+    render json: { message: "Student destroyed successfully" }
+  end
 end
