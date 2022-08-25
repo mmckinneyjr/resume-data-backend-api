@@ -46,4 +46,4 @@ group :development do
   # gem "spring"
 end
 
-gem 'jb'
+gem "jb"
