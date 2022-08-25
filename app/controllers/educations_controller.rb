@@ -2,7 +2,7 @@ class EducationsController < ApplicationController
 
   def index
     education = Education.all 
-    render :index
+    render json: education
   end
 
   def create
@@ -15,15 +15,15 @@ class EducationsController < ApplicationController
       details: params[:details],
     )
     if education.save
-      render json: experience
+      render json: education
     else
-      render json: { errors: experience.errors.full_messages }, status: :bad_request
+      render json: { errors: education.errors.full_messages }, status: :bad_request
     end
   end
 
   def show
     education = Education.find_by(id: params(:id))
-    render json: experience
+    render json: education
   end 
 
   def update
@@ -36,10 +36,9 @@ class EducationsController < ApplicationController
     if education.save
       render json: education
     else
-      render json: { errors: experience.errors.full_messages }, status: :bad_request
+      render json: { errors: education.errors.full_messages }, status: :bad_request
     end
   end
-end
 
   def destroy
     education = Education.find_by(id: params[:id])

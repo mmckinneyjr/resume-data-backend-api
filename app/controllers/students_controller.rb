@@ -12,7 +12,6 @@ class StudentsController < ApplicationController
 
   def create
     student = Student.new(
->>>>>>> 674c24288bca3c3074d5e060eb2e55bba3c362e0
       first_name: params["first_name"],
       last_name: params["last_name"],
       email: params["email"],
