@@ -1,14 +1,14 @@
 class StudentsController < ApplicationController
 
 	def index
-		students = Student.all
-		render json: students.as_json
+		@students = Student.all
+		render template: "students/index"
 	end
 
 	def show
 		student_id = params["id"]
-		student = Student.find_by(id: student_id)
-		render json: student.as_json
+		@student = Student.find_by(id: student_id)
+		render template: "students/show"
 	end
 	
 	def create
