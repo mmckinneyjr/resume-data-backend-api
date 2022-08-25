@@ -33,7 +33,6 @@ class StudentsController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
 	def update
 		student = Student.find_by(id: params["id"])
 		student.first_name = params["first_name"] || student.first_name
