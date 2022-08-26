@@ -33,25 +33,25 @@ class StudentsController < ApplicationController
     end
   end
 
-	def update
-		student = Student.find_by(id: params["id"])
-		student.first_name = params["first_name"] || student.first_name
-		student.last_name = params["last_name"] || student.last_name
-		student.email = params["email"] || student.email
-		student.phone_number = params["phone_number"] || student.phone_number
-		student.short_bio = params["short_bio"] || student.short_bio
-		student.linkedin_url = params["linkedin_url"] || student.linkedin_url
-		student.twitter_handle = params["twitter_handle"] || student.twitter_handle
-		student.website_url = params["website_url"] || student.website_url
-		student.resume_url = params["resume_url"] || student.resume_url
-		student.github_url = params["github_url"] || student.github_url
-		student.photo = params["photo"] || student.photo
-		if student.save
-			render json: student.as_json
-		else
-			render json: { errors: student.errors.full_messages }, status: :bad_request
-		end
-	end
+  def update
+    student = Student.find_by(id: params["id"])
+    student.first_name = params["first_name"] || student.first_name
+    student.last_name = params["last_name"] || student.last_name
+    student.email = params["email"] || student.email
+    student.phone_number = params["phone_number"] || student.phone_number
+    student.short_bio = params["short_bio"] || student.short_bio
+    student.linkedin_url = params["linkedin_url"] || student.linkedin_url
+    student.twitter_handle = params["twitter_handle"] || student.twitter_handle
+    student.website_url = params["website_url"] || student.website_url
+    student.resume_url = params["resume_url"] || student.resume_url
+    student.github_url = params["github_url"] || student.github_url
+    student.photo = params["photo"] || student.photo
+    if student.save
+      render json: student.as_json
+    else
+      render json: { errors: student.errors.full_messages }, status: :bad_request
+    end
+  end
 
   def destroy
     student = Student.find_by(id: params["id"])
